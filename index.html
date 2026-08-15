@@ -1,133 +1,240 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        h1{
-            background-color: aliceblue;
-            border-radius: 20px;
-            
-        }
-        p{
-            background-color: antiquewhite;
-            border-radius: 20px;
-        }
-    </style>
-</head>
-<body>
-    <h1>hello,friends from afer</h1>
-    <P>哪首诗歌你最触动</P>
-    <p>南朝庾信的《哀江南赋序》</p>
-    <p>
-粤以戊辰之年，
-建亥之月，
-大盗移国，
-金陵瓦解。
-余乃窜身荒谷，
-公私涂炭。
-华阳奔命，
-有去无归。
-中兴道销，
-穷于甲戌。
-三日哭于都亭，
-三年囚于别馆。
-天道周星，
-物极不反。
-傅燮之但悲身世，
-无处求生；
-袁安之每念王室，
-自然流涕。
-昔桓君山之志事，
-杜元凯之平生，
-并有著书，
-咸能自序。
-潘岳之文采，
-始述家风；
-陆机之辞赋，
-先陈世德。
-信年始二毛，
-即逢丧乱，
-藐是流离，
-至于暮齿。
-燕歌远别，
-悲不自胜；
-楚老相逢，
-泣将何及。
-畏南山之雨，
-忽践秦庭；
-让东海之滨，
-遂餐周粟。
-下亭漂泊，
-高桥羁旅。
-楚歌非取乐之方，
-鲁酒无忘忧之用。
-追为此赋，
-聊以记言，
-不无危苦之辞，
-唯以悲哀为主。
-日暮途远，
-人间何世！
-将军一去，
-大树飘零；
-壮士不还，
-寒风萧瑟。
-荆璧睨柱，
-受连城而见欺；
-载书横阶，
-捧珠盘而不定。
-钟仪君子，
-入就南冠之囚；
-季孙行人，
-留守西河之馆。
-申包胥之顿地，
-碎之以首；
-蔡威公之泪尽，
-加之以血。
-钓台移柳，
-非玉关之可望；
-华亭鹤唳，
-岂河桥之可闻！
-孙策以天下为三分，
-众才一旅；
-项籍用江东之子弟，
-人唯八千。
-遂乃分裂山河，
-宰割天下。
-岂有百万义师，
-一朝卷甲，
-芟夷斩伐，
-如草木焉！
-江淮无涯岸之阻，
-亭壁无藩篱之固。
-头会箕敛者，
-合纵缔交；
-锄耨棘矜者，
-因利乘便。
-将非江表王气，
-终于三百年乎？
-是知并吞六合，
-不免轵道之灾；
-混一车书，
-无救平阳之祸。
-呜呼！
-山岳崩颓，
-既履危亡之运；
-春秋迭代，
-必有去故之悲。
-天意人事，
-可以凄怆伤心者矣！
-况复舟楫路穷，
-星汉非乘槎可上；
-风飙道阻，
-蓬莱无可到之期。
-穷者欲达其言，
-劳者须歌其事。
-陆士衡闻而抚掌，
-是所甘心；
-张平子见而陋之，
-固其宜矣！
-    </p>
-</body>
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Tao 的个人主页——代码、游戏与生活碎片。"
+    />
+    <meta name="theme-color" content="#fbf9ff" />
+    <title>Tao — Personal Space</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="noise" aria-hidden="true"></div>
+
+    <section class="landing" id="landing" aria-labelledby="landing-title">
+      <img
+        class="landing__art"
+        src="assets/spring-river-hero.png"
+        alt="杏花桃花盛开、残雪未消的河谷水彩画"
+      />
+      <div class="landing__veil"></div>
+
+      <header class="landing__brand">
+        <span class="brand-mark" aria-hidden="true">T</span>
+        <span>TAO'S SPACE</span>
+      </header>
+
+      <main class="landing__content">
+        <p class="eyebrow">BETWEEN RIVER &amp; THOUGHT</p>
+        <h1 id="landing-title">春水初生，<br />在途中成为自己。</h1>
+
+        <figure class="thought" aria-live="polite">
+          <blockquote id="quote-text"></blockquote>
+          <figcaption>
+            <span id="quote-author"></span>
+            <span class="quote-source" id="quote-source"></span>
+          </figcaption>
+        </figure>
+
+        <div class="landing__actions">
+          <button class="enter-button" id="enter-site" type="button">
+            <span>进入 / Enter</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5 12h14M13 6l6 6-6 6" />
+            </svg>
+          </button>
+          <button class="shuffle-button" id="shuffle-quote" type="button" aria-label="换一句哲思">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M16 3h5v5M4 20 21 3M21 16v5h-5M15 15l6 6M4 4l5 5" />
+            </svg>
+            换一句
+          </button>
+        </div>
+      </main>
+
+      <div class="landing__season" aria-hidden="true">
+        <span>残雪</span><i></i><span>桃花</span><i></i><span>春水</span>
+      </div>
+      <div class="scroll-hint" aria-hidden="true"><span></span>SCROLL TO BEGIN</div>
+    </section>
+
+    <div class="site-shell" id="site-shell" aria-hidden="true">
+      <header class="topbar">
+        <a class="topbar__brand" href="#home" aria-label="返回首页">
+          <span class="brand-mark">T</span><span>Tao</span>
+        </a>
+        <nav class="nav" aria-label="主导航">
+          <button class="nav__item active" data-page="home" type="button">Home</button>
+          <button class="nav__item" data-page="games" type="button">Games</button>
+          <button class="nav__item" data-page="stack" type="button">Stack</button>
+          <button class="nav__item" data-page="timeline" type="button">Timeline</button>
+          <button class="nav__item" data-page="reserve-1" type="button">01</button>
+          <button class="nav__item" data-page="reserve-2" type="button">02</button>
+          <button class="nav__item" data-page="reserve-3" type="button">03</button>
+        </nav>
+        <button class="menu-button" id="menu-button" aria-label="打开菜单" aria-expanded="false" type="button">
+          <span></span><span></span>
+        </button>
+      </header>
+
+      <div class="mini-hero" id="mini-hero">
+        <img src="assets/spring-river-hero.png" alt="春日雪后河流与花树" />
+        <div class="mini-hero__copy">
+          <span>PERSONAL SPACE · 2026</span>
+          <p>山水有时尽，思考没有岸。</p>
+        </div>
+      </div>
+
+      <main class="pages">
+        <section class="page active" data-page-panel="home" id="home">
+          <div class="intro-grid">
+            <article class="profile-card reveal">
+              <div class="avatar-wrap">
+                <span class="avatar-orbit">CURRENTLY EXPLORING</span>
+                <img src="assets/nicole.png" alt="Tao 的头像" />
+                <span class="online-dot" title="Online"></span>
+              </div>
+              <div class="profile-copy">
+                <p class="section-kicker">HELLO, THIS IS</p>
+                <h2>Tao<span class="soft-dot">.</span></h2>
+                <p class="bio">一个正在学习如何构建世界，也学习如何观察世界的人。</p>
+                <dl class="profile-meta">
+                  <div><dt>FROM</dt><dd>Nanjing · 南京</dd></div>
+                  <div><dt>BORN</dt><dd>2006.03.12</dd></div>
+                  <div><dt>STATUS</dt><dd>Learning &amp; Creating</dd></div>
+                </dl>
+                <div class="contact-list">
+                  <a href="mailto:tzetao986@gmail.com">
+                    <span class="contact-icon">@</span>
+                    <span><small>EMAIL</small>tzetao986@gmail.com</span>
+                    <b>↗</b>
+                  </a>
+                  <div class="contact-placeholder">
+                    <span class="contact-icon">＋</span>
+                    <span><small>MORE LINKS</small>Waiting to be discovered</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <aside class="now-card reveal">
+              <div class="now-card__top"><span>NOW / 此刻</span><i></i></div>
+              <p class="now-card__time" id="live-time">--:--</p>
+              <p id="live-date">NANJING · --</p>
+              <div class="weather-art" aria-hidden="true"><span></span><i></i><b></b></div>
+              <blockquote>“Make a little progress, every single day.”</blockquote>
+            </aside>
+          </div>
+
+          <section class="overview reveal" aria-labelledby="overview-title">
+            <div class="section-heading">
+              <div><p class="section-kicker">A QUICK GLANCE</p><h2 id="overview-title">What I’m into</h2></div>
+              <p>游戏、代码，和那些值得被记住的小事。</p>
+            </div>
+            <div class="overview-grid">
+              <button class="feature-card games-card" data-jump="games" type="button">
+                <span class="feature-card__number">01</span>
+                <div><p>GAMES / 游戏</p><h3>在虚拟世界里<br />建造与远行</h3></div>
+                <span class="arrow">↗</span>
+              </button>
+              <button class="feature-card stack-card" data-jump="stack" type="button">
+                <span class="feature-card__number">02</span>
+                <div><p>TECH STACK</p><h3>用工具把想法<br />变成现实</h3></div>
+                <span class="arrow">↗</span>
+              </button>
+              <button class="feature-card timeline-card" data-jump="timeline" type="button">
+                <span class="feature-card__number">03</span>
+                <div><p>TIMELINE / 轨迹</p><h3>收藏平凡日子里<br />微小的坐标</h3></div>
+                <span class="arrow">↗</span>
+              </button>
+            </div>
+          </section>
+        </section>
+
+        <section class="page" data-page-panel="games" id="games">
+          <div class="page-title reveal"><p class="section-kicker">PLAY / EXPLORE / CREATE</p><h1>Game Library<span>.</span></h1><p>不是逃离现实，而是去更多世界短暂地生活。</p></div>
+          <div class="game-grid">
+            <article class="game-card game-genshin reveal"><span class="game-index">01</span><div class="game-symbol">✦</div><div><p>OPEN WORLD · RPG</p><h2>原神</h2><span>Genshin Impact</span></div></article>
+            <article class="game-card game-city reveal"><span class="game-index">02</span><div class="game-symbol">▥</div><div><p>CITY BUILDING</p><h2>都市：天际线</h2><span>Cities: Skylines</span></div></article>
+            <article class="game-card game-mc reveal"><span class="game-index">03</span><div class="game-symbol">◆</div><div><p>SANDBOX · CREATION</p><h2>我的世界</h2><span>Minecraft</span></div></article>
+          </div>
+        </section>
+
+        <section class="page" data-page-panel="stack" id="stack">
+          <div class="page-title reveal"><p class="section-kicker">TOOLS &amp; CURIOSITY</p><h1>Tech Stack<span>.</span></h1></div>
+          <article class="favorite-language reveal">
+            <div><p>Q / 你最喜欢的编程语言是什么？</p><h2>“Rust.”</h2></div>
+            <div class="rust-mark" aria-hidden="true">R</div>
+          </article>
+          <div class="skill-layout">
+            <div class="skill-panel reveal">
+              <h2>Languages</h2>
+              <div class="skill-list"><span>Rust <i>favorite</i></span><span>Python <i>daily</i></span><span>C++ <i>learning</i></span></div>
+            </div>
+            <div class="skill-panel reveal">
+              <h2>Web · 前端</h2>
+              <div class="skill-list"><span>HTML / CSS <i>building</i></span><span>Vue <i>next</i></span><span>React <i>next</i></span></div>
+              <p class="panel-note">Vue 和 React 还不会，但它们已经在学习清单里。</p>
+            </div>
+            <div class="skill-panel wide reveal">
+              <h2>Toolkit</h2>
+              <div class="tool-cloud"><span>Linux</span><span>Git</span><span>FFmpeg</span><span>Terminal</span><span>Open Source</span></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="page" data-page-panel="timeline" id="timeline">
+          <div class="page-title reveal"><p class="section-kicker">DAYS BECOME STORIES</p><h1>Timeline<span>.</span></h1><p>选一个日期，看看那一天留下了什么。</p></div>
+          <div class="journal-layout">
+            <aside class="calendar-card reveal">
+              <div class="calendar-head">
+                <button id="prev-month" type="button" aria-label="上个月">←</button>
+                <h2 id="calendar-label"></h2>
+                <button id="next-month" type="button" aria-label="下个月">→</button>
+              </div>
+              <div class="calendar-week"><span>MON</span><span>TUE</span><span>WED</span><span>THU</span><span>FRI</span><span>SAT</span><span>SUN</span></div>
+              <div class="calendar-days" id="calendar-days"></div>
+              <div class="calendar-legend"><i></i>有故事的一天</div>
+            </aside>
+
+            <article class="day-card reveal" id="day-card">
+              <p class="day-card__date" id="selected-date">2026 — 03 — 12</p>
+              <div class="day-card__rule"></div>
+              <p class="day-card__label">TODAY'S NOTE</p>
+              <h2 id="selected-title">u</h2>
+              <p class="day-card__content" id="selected-content">这是内容1</p>
+            </article>
+          </div>
+
+          <section class="event-line reveal">
+            <div class="section-heading"><div><p class="section-kicker">MILESTONES</p><h2>大事件</h2></div></div>
+            <div class="event-track" id="event-track">
+              <button class="event active" data-date="2026-03-12" type="button"><span>2026.03.12</span><i></i><b>u</b></button>
+              <button class="event" data-date="2016-03-12" type="button"><span>2016.03.12</span><i></i><b>n</b></button>
+            </div>
+          </section>
+        </section>
+
+        <section class="page reserve-page" data-page-panel="reserve-1" id="reserve-1">
+          <div class="construction"><span>01</span><p>RESERVED SPACE</p><h1>施工中</h1><div class="construction-line"><i></i></div><small>Ideas are on their way.</small></div>
+        </section>
+        <section class="page reserve-page" data-page-panel="reserve-2" id="reserve-2">
+          <div class="construction"><span>02</span><p>RESERVED SPACE</p><h1>施工中</h1><div class="construction-line"><i></i></div><small>Something quiet is growing here.</small></div>
+        </section>
+        <section class="page reserve-page" data-page-panel="reserve-3" id="reserve-3">
+          <div class="construction"><span>03</span><p>RESERVED SPACE</p><h1>施工中</h1><div class="construction-line"><i></i></div><small>See you in the next chapter.</small></div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <span>TAO'S PERSONAL SPACE</span>
+        <span>Made with curiosity · Nanjing</span>
+        <button id="back-to-cover" type="button">Back to cover ↑</button>
+      </footer>
+    </div>
+  </body>
 </html>
